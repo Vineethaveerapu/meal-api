@@ -1,12 +1,57 @@
+@import "./variables";
+
 @mixin font-size($size) {
   font-size: $size;
 }
 
 @mixin flex-center {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin responsive-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  @media (min-width: $breakpoint-tablet) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@mixin input {
+  border: 2px solid $border-color;
+  border-radius: $border-radius;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  padding: $spacing-md;
+  font-size: 1.2rem;
+}
+
+@mixin input-style {
+  @include input;
+  min-width: 300px;
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px $primary-color;
+    background-color: $border-color;
+    color: white;
+  }
+}
+
+@mixin button-style {
+  @include input;
+
+  &:hover {
+    background-color: $border-color;
+    color: white;
+  }
 }
 
 @mixin responsive-tablet {

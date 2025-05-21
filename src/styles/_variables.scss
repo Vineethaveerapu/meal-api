@@ -1,20 +1,19 @@
-// spacing
-
-$indent__base: 16px;
-$indent__s: $indent__base/ 2;
-$indent__m: $indent__base * 1.5;
-$indent__l: $indent__base * 2;
-$indent__xl: $indent__base * 3;
-$indent__xxl: $indent__base * 4;
-$indent__xxxl: $indent__base * 5;
-
 // Colors
+$primary-color: #3b82f6;
+$primary-hover: #2563eb;
 
-$primary-color: #f8f4f4;
-$secondary-color: #050101;
-$color-red: #e92e2e;
+$border-color: #7e2905;
 
-// BreakPoints
+// Spacing
+$spacing-xs: 0.25rem;
+$spacing-sm: 0.5rem;
+$spacing-md: 0.75rem;
+$spacing-lg: 1.5rem;
+$spacing-xl: clamp(4rem, 7vh, 10rem);
 
+// Border Radius
+$border-radius: 0.5rem;
+
+// Breakpoints
 $breakpoint-tablet: 768px;
 $breakpoint-desktop: 1024px;

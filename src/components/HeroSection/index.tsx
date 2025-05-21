@@ -1,4 +1,5 @@
-import "./index.scss";
+import "./heroSection.scss";
+import Search from "@/components/Search";
 
 const HeroSection = () => {
   return (
@@ -9,6 +10,7 @@ const HeroSection = () => {
           Discover the finest culinary experiences and authentic flavors from
           around the world. Your journey to exceptional dining starts here.
         </p>
+        <Search />
       </div>
     </div>
   );

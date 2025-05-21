@@ -1,0 +1,50 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.search {
+  @include flex-column;
+
+  gap: $spacing-md;
+  padding: $spacing-md;
+
+  margin: $spacing-xl auto;
+
+  &__controls {
+    display: flex;
+    gap: $spacing-sm;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: $spacing-xl;
+  }
+
+  &__input {
+    @include input-style;
+  }
+
+  &__button {
+    @include button-style;
+  }
+}
+
+.recipesGrid {
+  @include responsive-grid;
+  gap: $spacing-md;
+  &__Card {
+    padding: $spacing-md;
+    border: 2px solid $border-color;
+    border-radius: $border-radius;
+  }
+
+  &__Title {
+    font-weight: 600;
+    margin-bottom: $spacing-sm;
+  }
+
+  &__Image {
+    width: 100%;
+    height: 12rem;
+    object-fit: cover;
+    border-radius: $border-radius;
+    margin-top: $spacing-sm;
+  }
+}
