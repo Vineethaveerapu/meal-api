@@ -1,0 +1,20 @@
+// spacing
+
+$indent__base: 16px;
+$indent__s: $indent__base/ 2;
+$indent__m: $indent__base * 1.5;
+$indent__l: $indent__base * 2;
+$indent__xl: $indent__base * 3;
+$indent__xxl: $indent__base * 4;
+$indent__xxxl: $indent__base * 5;
+
+// Colors
+
+$primary-color: #f8f4f4;
+$secondary-color: #050101;
+$color-red: #e92e2e;
+
+// BreakPoints
+
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
