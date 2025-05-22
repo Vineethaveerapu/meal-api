@@ -8,16 +8,21 @@ const Search = () => {
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [recipes, setRecipes] = useState<Recipe[]>([]);
 
-  const API_URL =
-    "https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood";
+  const API_URL = `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchTerm}`;
 
   const fetchRecipes = async () => {
+    if (!searchTerm.trim()) {
+      setRecipes([]);
+      return;
+    }
+
     try {
       const response = await fetch(API_URL);
       const data: RecipeResponse = await response.json();
       setRecipes(data.meals || []);
     } catch (error) {
       console.error("Error fetching recipes:", error);
+      setRecipes([]);
     }
   };
 
@@ -34,7 +39,7 @@ const Search = () => {
           type="text"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          onKeyPress={handleKeyPress}
+          onKeyUp={handleKeyPress}
           placeholder="Search recipes..."
           className="search__input"
         />
