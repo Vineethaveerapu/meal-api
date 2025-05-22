@@ -8,15 +8,14 @@
 }
 
 .search {
-  @include flex-column;
-  gap: $spacing-md;
   padding: $spacing-md;
   margin: $spacing-xl auto;
 
   &__controls {
     display: flex;
     gap: 1rem;
-    margin-bottom: 2rem;
+    max-width: 900px;
+    margin: 0 auto 2rem auto;
   }
 
   &__input-container {
