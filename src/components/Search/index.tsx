@@ -110,7 +110,7 @@ const Search = () => {
               {categories.map((category) => (
                 <div
                   key={category.idCategory}
-                  className="search__category-item"
+                  className="search__categories-item"
                   onClick={() => handleCategorySelect(category.strCategory)}
                 >
                   <Image
@@ -119,7 +119,7 @@ const Search = () => {
                     width={30}
                     height={30}
                   />
-                  <span>{category.strCategory}</span>
+                  <div>{category.strCategory}</div>
                 </div>
               ))}
             </div>
