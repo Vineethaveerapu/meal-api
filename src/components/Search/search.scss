@@ -1,12 +1,16 @@
 @import "../../styles/variables";
 @import "../../styles/mixins";
 
+.search-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
 .search {
   @include flex-column;
-
   gap: $spacing-md;
   padding: $spacing-md;
-
   margin: $spacing-xl auto;
 
   &__controls {
@@ -38,6 +42,7 @@
   &__Title {
     font-weight: 600;
     margin-bottom: $spacing-sm;
+    color: $primary-color;
   }
 
   &__Image {
