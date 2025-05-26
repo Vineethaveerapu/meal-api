@@ -40,7 +40,7 @@
 
 @mixin input-style {
   @include input;
-  min-width: 400px;
+  width: 100%;
 
   &:focus {
     outline: none;
