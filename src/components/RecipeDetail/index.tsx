@@ -21,20 +21,21 @@ const RecipeDetail = ({ recipe }: RecipeDetailProps) => {
   return (
     <div className="recipeDetail">
       <Link href="/" className="recipeDetail__back">
-        ← Back to Recipes
+        ← Back to Home
       </Link>
       <h1 className="recipeDetail__title">{recipe.strMeal}</h1>
       <div className="recipeDetail__content">
-        <div className="recipeDetail__image">
+        <div>
           <Image
             src={recipe.strMealThumb}
             alt={recipe.strMeal}
             width={500}
             height={500}
+            className="recipeDetail__image"
           />
         </div>
         <div className="recipeDetail__info">
-          <div className="recipeDetail__meta">
+          <div className="recipeDetail__place">
             <p>
               <strong>Category:</strong> {recipe.strCategory}
             </p>
@@ -44,13 +45,12 @@ const RecipeDetail = ({ recipe }: RecipeDetailProps) => {
           </div>
           <div className="recipeDetail__ingredients">
             <h2>Ingredients</h2>
-            <ul>
-              {ingredients.map((item, index) => (
-                <li key={index}>
-                  {item.measurement} {item.ingredient}
-                </li>
-              ))}
-            </ul>
+
+            {ingredients.map((item, index) => (
+              <div key={index}>
+                {item.ingredient} - {item.measurement}
+              </div>
+            ))}
           </div>
           <div className="recipeDetail__instructions">
             <h2>Instructions</h2>

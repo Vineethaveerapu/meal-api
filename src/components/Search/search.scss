@@ -61,6 +61,11 @@
 .recipesGrid {
   @include responsive-grid;
 
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
   &__Card {
     background-color: rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(10px);
@@ -70,7 +75,7 @@
     transition: transform 0.2s;
 
     &:hover {
-      transform: translateY(-4px);
+      transform: translateY(-10px);
     }
   }
 
