@@ -1,16 +1,10 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { Recipe, RecipeResponse } from "@/utils/types";
+import { Recipe, RecipeResponse, Category } from "@/utils/types";
 import "./search.scss";
 import Image from "next/image";
-
-interface Category {
-  idCategory: string;
-  strCategory: string;
-  strCategoryThumb: string;
-  strCategoryDescription: string;
-}
+import Link from "next/link";
 
 const Search = () => {
   const [searchTerm, setSearchTerm] = useState<string>("");
@@ -132,16 +126,18 @@ const Search = () => {
       {recipes.length > 0 && (
         <div className="recipesGrid">
           {recipes.map((recipe) => (
-            <div key={recipe.idMeal} className="recipesGrid__Card">
-              <h3 className="recipesGrid__Title">{recipe.strMeal}</h3>
-              <Image
-                src={recipe.strMealThumb}
-                alt={recipe.strMeal}
-                className="recipesGrid__Image"
-                width={300}
-                height={300}
-              />
-            </div>
+            <Link href={`/${recipe.idMeal}`} key={recipe.idMeal}>
+              <div className="recipesGrid__Card">
+                <h3 className="recipesGrid__Title">{recipe.strMeal}</h3>
+                <Image
+                  src={recipe.strMealThumb}
+                  alt={recipe.strMeal}
+                  className="recipesGrid__Image"
+                  width={300}
+                  height={300}
+                />
+              </div>
+            </Link>
           ))}
         </div>
       )}
