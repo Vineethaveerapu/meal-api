@@ -126,7 +126,7 @@ const Search = () => {
       {recipes.length > 0 && (
         <div className="recipesGrid">
           {recipes.map((recipe) => (
-            <Link href={`/${recipe.idMeal}`} key={recipe.idMeal}>
+            <Link href={`/recipe/${recipe.idMeal}`} key={recipe.idMeal}>
               <div className="recipesGrid__Card">
                 <h3 className="recipesGrid__Title">{recipe.strMeal}</h3>
                 <Image

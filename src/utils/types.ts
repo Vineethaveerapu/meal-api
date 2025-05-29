@@ -23,3 +23,9 @@ export interface Ingredient {
   ingredient: string | null;
   measurement: string | null;
 }
+
+export interface PageProps {
+  params: {
+    id: string;
+  };
+}
