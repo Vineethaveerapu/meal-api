@@ -3,7 +3,8 @@ import getMeal from "@/utils/getMeal";
 import { PageProps } from "@/utils/types";
 
 export default async function RecipePage({ params }: PageProps) {
-  const meal = await getMeal(params.id);
+  const resolvedParams = await params;
+  const meal = await getMeal(resolvedParams?.id || "");
 
   if (!meal) {
     return (
